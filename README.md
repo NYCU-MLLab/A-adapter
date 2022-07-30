@@ -34,6 +34,7 @@ adv = Aadapter(adv_K=3, adv_lr=1e-1, adv_init_mag=2e-2, adv_max_norm=1.0, adv_no
 We also try to extend our work to ASR pre-trained models, such as Wave2vec2.0 and HuBERT.
 In ASR, please use the same environment with *Adversarial Training for NLU*.
 1. Librispeech
+
 HuBERT
 ```
 python run_speech_recognition_ctc.py \
@@ -95,6 +96,7 @@ python run_speech_recognition_ctc.py \
 	--do_train --do_eval
 ```
 2. Common Voice
+
 HuBERT
 ```
 python run_speech_recognition_ctc.py \
