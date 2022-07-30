@@ -3,8 +3,8 @@
 Adversarial training and adapter structure benefit pre-trained model transfer learning, especially in low-resource datasets. Here we upload different kinds of adversarial training algorithms w/o adapters for easily modify. A_adapter includes several adversarial algorithms with adapter pre-trained models. Adversarial Training for NLU includes the same but without the adapter.
 
 ## Instructions
-This work is based on huggingface transformers and adapter-Hub.
-Notice that w/o adapter does *NOT* share the same environment. It would be best if builts them separately.
+This work is based on [huggingface/transformers](https://github.com/huggingface/transformers) and [adapter-Hub](https://github.com/adapter-hub/adapter-transformers).
+Notice that w/o adapter does **NOT** share the same environment. It would be best if builts them separately.
 
 1. Set up
 ```
@@ -22,7 +22,7 @@ python run_glue_Aadapter.py \
   --num_train_epochs 10
 ```
 3. Using other pre-trained model
-If you want to change for other pre-trained like RoBERTa, don't forget to give the base_model name to the adversarial training class.
+If you want to change for other pre-trained like RoBERTa, don't forget to give the **base_model** name to the adversarial training class.
 ```
 # run_glue_XXX.py
 
