@@ -13,11 +13,19 @@ $ pip install -r requirements.txt
 2. Training
 ```
 export TASK_NAME=cola
-python run_glue_ADAS.py \
+python run_glue_Aadapter.py \
   --model_name_or_path bert-base-cased \
   --task_name $TASK_NAME \
   --max_length 256 \
   --per_device_train_batch_size 32 \
   --learning_rate 7e-4 \
   --num_train_epochs 10
+```
+3. Using other pre-trained model
+If you want to change for other pre-trained like RoBERTa, don't forget to give the base_model name to the adversarial training class.
+```
+# run_glue_XXX.py
+
+# init adversarial class
+adv = Aadapter(adv_K=3, adv_lr=1e-1, adv_init_mag=2e-2, adv_max_norm=1.0, adv_norm_type='l2', base_model='roberta')
 ```
