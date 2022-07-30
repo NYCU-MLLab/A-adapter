@@ -5,3 +5,8 @@ Adversarial training and adapter structure benefit pre-trained model transfer le
 ## Instructions
 This work is based on huggingface transformers and adapter-Hub.
 Notice that w/o adapter does *NOT* share the same environment. It would be best if builts them separately.
+
+1. Set up
+'''
+$ pip install -r requirements.txt
+'''
