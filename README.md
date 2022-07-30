@@ -13,5 +13,11 @@ $ pip install -r requirements.txt
 2. Training
 ```
 export TASK_NAME=cola
-python run_glue_ADAS.py   --model_name_or_path bert-base-cased  --task_name $TASK_NAME   --max_length 256   --per_device_train_batch_size 32  --learning_rate 7e-4  --num_train_epochs 10
+python run_glue_ADAS.py \
+  --model_name_or_path bert-base-cased \
+  --task_name $TASK_NAME \
+  --max_length 256 \
+  --per_device_train_batch_size 32 \
+  --learning_rate 7e-4 \
+  --num_train_epochs 10
 ```
