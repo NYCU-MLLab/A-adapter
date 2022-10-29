@@ -30,9 +30,29 @@ If you want to change for other pre-trained like RoBERTa, don't forget to give t
 adv = Aadapter(adv_K=3, adv_lr=1e-1, adv_init_mag=2e-2, adv_max_norm=1.0, adv_norm_type='l2', base_model='roberta')
 ```
 
+### computation cost
+Memory:
+
+We use single GPU(NVIDIA GeForce RTX 3090) and 20~22G RAM in our setting. The batch size and sentence length depend on your device.
+
+Time:
+|   Task   |  Metric  | Training time |
+| -------- | -------- | ------------- |
+|   CoLA   | Matthews corr. | 3 min |
+|   SST-2  | Accuracy | 30 min |
+|   MRPC   | F1/Accuracy | 3 min |
+|   STS-B  | Pearson/Spearman corr. | 4 min |
+|   QQP    | Accuracy/F1 | 4 hr 21 min |
+|   MNLI   | Matched acc./Mismatched acc. | 5 hr 46 min |
+|   QNLI   | Accuracy | 1 hr 40 min |
+|   RTE    | Accuracy | 3 min |
+|   WNLI   | Accuracy | 30 sec |
+
+
 ## Automatic Speech Recognition(ASR)
 We also try to extend our work to ASR pre-trained models, such as Wave2vec2.0 and HuBERT.
-In ASR, please use the same environment with *Adversarial Training for NLU*.
+In ASR, please use the same environment with *Adversarial Training for NLU*, please install requirements.txt and replace transformers/trainer.py with our trainer.py.
+
 1. Librispeech
 
 HuBERT
@@ -132,7 +152,7 @@ python run_speech_recognition_ctc.py \
 	--dataset_config_name="tr" \
 	--output_dir="./wav2vec2-common_voice-tr-demo" \
 	--overwrite_output_dir \
-	--num_train_epochs="15" \
+	--num_train_epochs="20" \
 	--per_device_train_batch_size="16" \
 	--gradient_accumulation_steps="2" \
 	--learning_rate="3e-4" \
@@ -151,3 +171,16 @@ python run_speech_recognition_ctc.py \
 	--group_by_length \
 	--do_train --do_eval 
 ```
+
+### Computation cost
+Memory:
+
+We use single GPU(NVIDIA GeForce RTX 3090) and 20~22G RAM in our setting. The batch size depends on your device.
+
+Time:
+|   Task   | Training time |
+| -------- |------------- |
+|   CommonVoice-HuBERT   | 2hr 8min |
+|   CommonVoice-Wav2vec2.0  | 18hr |
+|   LibriSpeech-HuBERT   | 2hr 6min |
+|   LibriSpeech-Wav2vec2.0  | 17hr 57min |
