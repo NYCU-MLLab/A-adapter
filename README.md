@@ -181,6 +181,6 @@ Time:
 |   Task   | Training time |
 | -------- |------------- |
 |   CommonVoice-HuBERT   | 2hr 8min |
-|   CommonVoice-Wav2vec2.0  | 18hr |
-|   LibriSpeech-HuBERT   | 2hr 6min |
+|   CommonVoice-Wav2vec2.0  | 2hr 6min |
+|   LibriSpeech-HuBERT   | 18hr |
 |   LibriSpeech-Wav2vec2.0  | 17hr 57min |
